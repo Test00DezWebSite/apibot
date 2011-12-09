@@ -1,0 +1,15 @@
+- if(locals.response.length > 0)
+  p #{locals.response[0].user.login} has #{locals.response.length} gist(s). Here they are:
+  table.bordered-table
+    thead
+      tr
+        th Gist \#
+        th Description
+    tbody
+      - for gist in locals.response
+        tr
+          td
+            a(href="#{gist.html_url}", target='_TOP')= gist.id
+          td= gist.description
+- else
+  p.error That user has no gists

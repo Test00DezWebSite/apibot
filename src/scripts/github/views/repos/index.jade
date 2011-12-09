@@ -1,0 +1,15 @@
+- if (locals.response.length > 0)
+  p There are #{locals.response.length} repo(s) that match your query. Here they are:
+  table.bordered-table
+    thead
+      tr
+        th Name
+        th Description
+    tbody
+      - for repo in locals.response
+        tr
+          td
+            a(href="#{repo.html_url}")= repo.name
+          td= repo.description
+- else
+  p.error There are no repos that match your query!

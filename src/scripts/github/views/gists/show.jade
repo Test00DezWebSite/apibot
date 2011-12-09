@@ -1,0 +1,10 @@
+- var gist = locals.response
+p Gist \#<a href="#{gist.html_url}" target="_TOP">#{locals.response.id}</a>
+
+p #{gist.description}
+
+- each filedata, filename in gist.files
+  .wrapper
+    pre.prettyprint
+      #{filedata.content}
+    button.btn.small.filename #{filename}

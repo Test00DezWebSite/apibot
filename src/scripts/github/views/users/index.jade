@@ -1,0 +1,17 @@
+- if (locals.response.length > 0)
+  p There are #{locals.response.length} user(s) that match your query. Here they are:
+  table.bordered-table
+    thead
+      tr
+        th(width=42)
+        th Username
+    tbody
+      - for user in locals.response
+        tr
+          td
+            a(href="https://github.com/#{user.login}", target="_TOP")
+              img(src="#{user.avatar_url}", width=32, height=32)
+          td
+            a(href="https://github.com/#{user.login}", target="_TOP")= user.login
+- else
+  p.error There are no users that match your query!

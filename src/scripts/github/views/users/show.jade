@@ -1,0 +1,36 @@
+- var user = locals.response
+- if(user)
+  table.bordered-table
+    tbody
+      tr
+        td Avatar
+        td
+          a(href="#{user.html_url}")
+            img(src="#{user.avatar_url}", width=32, height=32)
+      - if(user.name)
+        tr
+          td Name
+          td= user.name
+      - if(user.email)
+        tr
+          td Email
+          td= user.email
+      - if(user.blog)
+        tr
+          td Blog
+          td
+            a(href="#{user.blog}")= user.blog
+      - if(user.bio)
+        tr
+          td Bio
+          td= user.bio
+      - if(user.company)
+        tr
+          td Company
+          td= user.company
+      - if(user.location)
+        tr
+          td Location
+          td= user.location
+- else
+  p.error That user does not exist!

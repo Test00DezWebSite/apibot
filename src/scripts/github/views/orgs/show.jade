@@ -1,0 +1,28 @@
+- var org = locals.response
+- if(org)
+  table.bordered-table
+    tbody
+      tr
+        td Avatar
+        td
+          a(href="#{org.html_url}")
+            img(src="#{org.avatar_url}", width=32, height=32)
+      - if(org.name)
+        tr
+          td Name
+          td= org.name
+      - if(org.email)
+        tr
+          td Email
+          td= org.email
+      - if(org.blog)
+        tr
+          td Blog
+          td
+            a(href="#{org.blog}")= org.blog
+      - if(org.location)
+        tr
+          td Location
+          td= org.location
+- else
+  p.error That org does not exist!

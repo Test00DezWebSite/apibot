@@ -1,0 +1,264 @@
+@import 'app/assets/stylesheets/bootstrap/bootstrap_xtra';
+
+/*
+ *  Main Styles
+ */
+html, body {
+  background: #ffffff url('/images/cubes.png') repeat;
+  height: 100%;
+}
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-device-width: 480px) {
+  body {
+    font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
+  } 
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+input, textarea, select {
+  -webkit-appearance: none !important;
+  -webkit-border-radius: 0 !important;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+/*
+ *  Login
+ */
+#login-box {
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 20px #ccc;
+  display: none;
+  margin: 0 auto;
+  opacity: 0.8;
+  position: relative;
+  width: 329px;
+  
+  .content {
+    padding: 25px;
+  }
+  
+  h1 {
+    font-family: 'Cabin Sketch';
+    font-size: 40px;
+    font-weight: normal;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  #login-name, #login-password {
+    text-align: center;
+  }
+  
+  .login-help-text {
+    color: @grayDark;
+    font-size: 10px;
+    line-height: 16px;
+    text-align: center;
+  }
+  
+  #login-button {
+    display: block;
+    margin: 0 auto;
+    width: 140px;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  #login-box {
+    border: none;
+    display: block;
+    height: 100%;
+    margin: 0;
+    opacity: 1.0;
+    width: 100%;
+    
+    input {
+      width: 265px;
+    }
+    
+    .content {
+      padding: 20px;
+    }
+    
+    .actions {
+      background: white;
+    }
+  }
+}
+
+#chat-area {
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 20px #ccc;
+  display: block;
+  margin: 50px;
+  opacity: 0.8;
+  padding: 0 0 86px 0;
+  position: absolute;
+
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  .content {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .actions {
+    bottom: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+  
+    .wrapper {
+      margin: 20px;
+    
+      textarea {
+        box-sizing: border-box;
+        resize: none;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  
+  #chat-area {
+    margin: 0 !important;
+  }
+  
+  .actions {
+    .wrapper {
+      margin: 5px !important;
+    }
+  }
+  
+}
+
+.message-wrapper {
+  border-bottom: 1px solid #ccc;
+  display: none;
+  position: relative;
+  width: 100%;
+  
+  .left {
+    background: #eee;
+    border-right: 1px solid #ccc;
+    box-shadow: 1px 0 5px #ccc;
+    height: 100%;
+    left: 0;
+    position: absolute;
+  }
+  
+  .message-avatar {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px #ccc;
+    display: block;
+    height: 48px;
+    margin: 10px;
+    width: 48px;
+  }
+ 
+  .right {
+    float: left;
+    margin-left: 70px;
+    padding: 15px;
+  } 
+  
+  .message-username {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .message-message {
+    color: #666;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .message-message img {
+    background: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px #ccc;
+    padding: 5px;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  .left {
+    display: none;
+  }
+  
+  .message-avatar {
+    display: none;
+  }
+  
+  .right {
+    float: none;
+    margin-left: 0 !important;
+  }
+}
+
+.wrapper {
+  margin: 5px;
+  
+  pre {
+    overflow-x: auto;
+  }
+  
+  .filename {
+    bottom: 33px;
+    float: left;
+    opacity: 1.0;
+    position: absolute;
+    right: 20px;
+    .transition(opacity 0.2s linear);
+  }
+  
+  &:hover {
+    .filename {
+      opacity: 0.0;
+    }
+  }
+}
+
+.actions {
+  margin:0;
+  padding: 20px 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.error {
+  color: #b94a48 !important;
+  font-weight: bold !important;
+}
+
+.spinner {
+  background: transparent url('/images/spinner.gif') no-repeat;
+  display: none;
+  height: 11px;
+  margin: 10px auto 25px auto;
+  width: 43px;
+}

@@ -1,0 +1,20 @@
+#chat-area
+  .content
+    
+  .actions
+    .wrapper
+      textarea(id='chat-box', autocapitalize='off', autocorrect='off', autocomplete='off', spellcheck='false')
+
+script
+  var chat;
+  $(function() {
+    chat = new Chat('#chat-area .content', '#chat-box');
+  });
+
+- if(flash.notice)
+  script
+    $(function() {
+      setTimeout(function() {
+        chat.appendMessage(chat.chatMessage({username:'API Bot', avatar:'/images/robot.jpg'}, '#{flash.notice}'));
+      }, 250);
+    });

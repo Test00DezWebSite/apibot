@@ -1,0 +1,17 @@
+#login-box
+  form#login-form(action='/', method='POST')
+    .content
+      h1 API Bot
+      
+      .clearfix
+        input.xlarge#login-name(type='text', name='name', placeholder='username', autocapitalize='off', autocorrect='off', autocomplete='off', spellcheck='false')
+      .clearfix
+        input.xlarge#login-password(type='password', name='password', placeholder='password', autocapitalize='off', autocorrect='off', autocomplete='off', spellcheck='false')
+
+      - if (flash.error)
+        .login-help-text.error= flash.error
+      - else
+        .login-help-text This application will require that you authenticate yourself to various APIs to fully use its capabilities.
+
+    .actions
+      button.btn.chat.icon.primary.alternative#login-button(typee='submit') Start Chatting

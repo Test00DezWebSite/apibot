@@ -1,0 +1,17 @@
+- if (locals.response.length > 0)
+  p That user has #{locals.response.length} organization(s). Here they are:
+  table.bordered-table
+    thead
+      tr
+        th(width=42)
+        th Organization
+    tbody
+      - for org in locals.response
+        tr
+          td
+            a(href="https://github.com/#{org.login}", target="_TOP")
+              img(src="#{org.avatar_url}", width=32, height=32)
+          td
+            a(href="https://github.com/#{org.login}", target="_TOP")= org.login
+- else
+  p.error That user does not belong to any organizations
