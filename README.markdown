@@ -24,15 +24,11 @@ Creating a New Service
 I have OCD. It's really handy when creating a large project though. As such, there's a clearly outline directory structure and format that developers should following when submitting additional scripts:
 
  1. Everything must be written in CoffeeScript.
- 2. Each script must be namespaced in it's own folder:
-		/[SCRIPT]
-			/[SCRIPT].coffee
-			/config(.example).json
- 3. All view files must be written in Jade and placed in the views directory:
-	  /[SCRIPT]
-			/views
-				/[VIEW FILES]
+ 2. Each script must be namespaced in it's own folder.
+ 3. All view files must be written in Jade and placed in the views directory.
  4. You code must be properly namespaced and very readable. If it makes sense to breaks things into smaller modules, break them into smaller modules and files.
+
+See the github one for an example.
 
 FAQ
 ---
